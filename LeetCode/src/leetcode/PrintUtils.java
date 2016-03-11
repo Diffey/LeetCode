@@ -11,6 +11,12 @@ package leetcode;
  */
 public class PrintUtils {
 
+    /**
+     * 打印数组
+     *
+     * @param <T>
+     * @param arr
+     */
     public static <T> void printArray(T[] arr) {
         for (T t : arr) {
             System.out.print(t);
@@ -20,7 +26,8 @@ public class PrintUtils {
 
     /**
      * 打印int数组
-     * @param arr 
+     *
+     * @param arr
      */
     public static void printArray(int[] arr) {
         for (int t : arr) {
