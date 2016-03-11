@@ -80,38 +80,18 @@ public class Main {
         return result;
     }
 
-//    public static int[] twoSumBySort(int[] nums, int target) {
-//        int[] result = new int[2];
-//        Map<Integer, Integer> map = new HashMap();
-//        for (int i = 0; i < nums.length; i++) {
-//            map.put(nums[i], i);
-//        }
-//        //可以自己写排序算法
-//        Arrays.sort(nums);
-//        int sIndex = 0;
-//        int eIndex = nums.length - 1;
-//        for (int i = 0; i < nums.length; i++) {
-//            if (nums[sIndex] + nums[eIndex] == target) {
-//                result[0] = map.get(nums[sIndex]);
-//                result[1] = map.get(nums[eIndex]);
-//            } else if (nums[sIndex] + nums[eIndex] > target) {
-//                eIndex--;
-//            } else {
-//                sIndex++;
-//            }
-//
-//        }
-//
-//        if (result[0] > result[1]) {
-//            sIndex = result[0];
-//            result[0] = result[1];
-//            result[1] = sIndex;
-//        }
-//        return result;
-//    }
+    /**
+     * 排序后再查找
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] twoSumBySort(int[] nums, int target) {
         int[] result = new int[2];
-        int[] copyNums = nums.clone();
+//        int[] copyNums = nums.clone();
+        int[] copyNums = new int[nums.length];
+        System.arraycopy(nums, 0, copyNums, 0, nums.length);
         //可以自己写排序算法
         Arrays.sort(nums);
         int sIndex = 0;
@@ -129,18 +109,23 @@ public class Main {
 
         }
 
-        boolean f = false;
+        boolean fGit = false;
         for (int i = 0; i < copyNums.length; i++) {
-            if (!f && copyNums[i] == result[0]) {
+            if (!fGit && copyNums[i] == result[0]) {
                 sIndex = i;
-                f = true;
+                fGit = true;
             } else if (copyNums[i] == result[1]) {
                 eIndex = i;
             }
         }
+        if (sIndex > eIndex) {
+            result[0] = eIndex;
+            result[1] = sIndex;
+        } else {
+            result[0] = sIndex;
+            result[1] = eIndex;
+        }
 
-        result[0] = sIndex > eIndex ? eIndex : sIndex;
-        result[1] = sIndex > eIndex ? sIndex : eIndex;
         return result;
     }
 
