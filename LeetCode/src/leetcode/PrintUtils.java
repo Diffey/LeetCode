@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import leetcode.addtwonumbers.ListNode;
+
 /**
  *
  * @author DQ
@@ -32,6 +34,19 @@ public class PrintUtils {
     public static void printArray(int[] arr) {
         for (int t : arr) {
             System.out.print(t + " ");
+        }
+        System.out.println();
+    }
+
+    /**
+     * 打印链表
+     *
+     * @param ls
+     */
+    public static void printListNode(ListNode ls) {
+        while (ls != null) {
+            System.out.print(ls.val + " ");
+            ls = ls.next;
         }
         System.out.println();
     }
