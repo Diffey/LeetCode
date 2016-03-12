@@ -39,6 +39,17 @@ public class PrintUtils {
     }
 
     /**
+     * 打印char数组
+     * @param arr 
+     */
+    public static void printArray(char[] arr) {
+        for (int t : arr) {
+            System.out.print(t + " ");
+        }
+        System.out.println();
+    }
+
+    /**
      * 打印链表
      *
      * @param ls
