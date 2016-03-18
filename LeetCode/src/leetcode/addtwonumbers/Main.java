@@ -5,7 +5,7 @@
  */
 package leetcode.addtwonumbers;
 
-import leetcode.PrintUtils;
+import leetcode.utils.PrintUtils;
 
 /**
  *
